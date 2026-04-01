@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css">
+    <title>E-Commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Kumbh Sans", "sans-serif"],
+          },
+          colors: {
+            orange: "hsl(26, 100%, 55%)",
+            paleOrange: "hsl(25, 100%, 94%)",
+
+            veryDarkBlue: "hsl(220, 13%, 13%)",
+            darkGrayishBlue: "hsl(219, 9%, 45%)",
+            grayishBlue: "hsl(220, 14%, 75%)",
+            lightGrayishBlue: "hsl(223, 64%, 98%)",
+
+            white: "hsl(0, 0%, 100%)",
+            black: "hsl(0, 0%, 0%)",
+          },
+        },
+      },
+    };
+  </script>
+  <body class="font-sans">
+
+    <!-- Navigation -->
+    <nav
+      class="relative bg-lightGrayishBlue flex gap-4 items-center justify-between p-4 z-20"
+    >
+      <div class="flex flex-row items-center">
+        <div class="flex items-end gap-4 md:px-8">
+          <img class="btn-menue md:hidden" src="./images/icon-menu.svg" alt="menue icon" />
+          <img src="./images/logo.svg" alt="logo sneaker" />
+        </div>
+
+        <!-- Menue -->
+        <ul
+          class="menue md:ml-auto md:bg-transparent md:static md:top-6 md:left-56 hidden md:flex md:bg-none md:p-0 z-10 flex gap-4 flex-col md:flex-row justify-self-end absolute top-0 left-0 p-6 w-[200px] h-screen md:h-full bg-lightGrayishBlue"
+        >
+          <img
+            class="btn-close w-4 mb-8 md:hidden"
+            src="./images/icon-close.svg"
+            alt="close icon"
+          />
+          <li>
+            <a class="font-bold hover:text-orange" href="#Collections"
+              >Collections</a
+            >
+          </li>
+          <li>
+            <a class="font-bold hover:text-orange" href="#Men">Men</a>
+          </li>
+          <li>
+            <a class="font-bold hover:text-orange" href="#Women">Women</a>
+          </li>
+          <li>
+            <a class="font-bold hover:text-orange" href="#About">About</a>
+          </li>
+          <li>
+            <a class="font-bold hover:text-orange" href="#Contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex items-center gap-4 justify-center md:px-8">
+        <button id="shopping-basket" class="flex gap-2 border-2 border-black rounded-full px-4 py-1 items-center">
+          <img class="w-6 h-6" src="./images/icon-cart.svg" alt="cart icon" />
+          <p class="basketCount bg-orange rounded-full px-2 text-white text-sm">0</p>
+        </button>
+        
+        <img class="w-10 h-10" src="./images/image-avatar.png" alt="avatar" />
+      </div>
+
+      
+    </nav>
+
+    <!-- Basket Card -->
+    <div class="basket-card absolute md:top-18 hidden basket-out top-20 right-0 b bg-lightGrayishBlue/95 md:p-12 rounded-xl p-6 z-10">
+      <h2 class="text-2xl font-bold mb-4">Basketcase</h2>
+      <div class="grid grid-cols-[auto_auto_auto] gap-4 items-center">
+        <img class="w-14" src="./images/image-product-1-thumbnail.jpg"
+        alt="sneaker front">
+        <div class="flex flex-col">
+          <h3 class="font-bold text-sm">Fall Limited Edition Sneakers</h3>
+        <div class="flex items-center flex-row justify-between w-full">
+          <button class="btn-basket-minus p-4">
+            <img class="" src="./images/icon-minus.svg" alt="minus icon" />
+          </button>
+          <p class="quantity-basket font-bold">0</p>
+          <button class="btn-basket-plus p-4">
+            <img src="./images/icon-plus.svg" alt="plus icon" />
+          </button>
+          <p class="font-semibold">x $125</p>
+        </div>
+        </div>
+        <p class="product-price text-xl font-semibold px-8">$125</p>
+      </div>
+      <div class="mx-auto w-full text-right">
+        <button class="checkout bg-orange p-2 rounded-md font-bold mt-2">Checkout</button>
+      </div>
+      
+    </div>
+
+<!-- Product View -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:m-24 md:m-12 max-w-4xl lg:mx-auto">
+      <div class="aspect-square mb-6 md:mb-0">
+        <div class="relative w-full">
+          <img
+          class="fadeIn fullImage w-full h-full object-cover md:rounded-md md:max-w-md"
+          src="./images/image-product-1.jpg"
+          alt="white sneaker"
+        />
+        <button class="pre-btn absolute top-1/2 left-5 -translate-y-1/2 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center hover:bg-orange">
+          <img src="./images/icon-previous.svg" class="w-4 h-4 mr-1" />
+        </button>
+        <button class="next-btn absolute top-1/2 right-5 -translate-y-1/2 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center hover:bg-orange">
+          <img src="./images/icon-next.svg" class="w-4 h-4 ml-1" />
+        </button>
+        
+        </div>
+       
+        <!-- Thumbnails -->
+        <div class="mt-6 flex justify-between md:flex hidden">
+          <div
+            class="group md:w-16 lg:w-24 border-2 border-transparent hover:border-orange rounded-md overflow-hidden"
+          >
+            <img
+            id="1"
+              class="thumbnail object-center w-full group-hover:opacity-20"
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="sneaker front"
+            />
+          </div>
+          <div
+            class="group md:w-16 lg:w-24 border-2 border-transparent hover:border-orange rounded-md overflow-hidden"
+          >
+            <img
+            id="2"
+              class="thumbnail object-center w-full group-hover:opacity-20"
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="sneaker front"
+            />
+          </div>
+          <div
+            class="group md:w-16 lg:w-24 border-2 border-transparent hover:border-orange rounded-md overflow-hidden"
+          >
+            <img
+            id="3"
+              class="thumbnail object-center w-full group-hover:opacity-20"
+              src="./images/image-product-3-thumbnail.jpg"
+              alt="sneaker front"
+            />
+          </div>
+          <div
+            class="group md:w-16 lg:w-24 border-2 border-transparent hover:border-orange rounded-md overflow-hidden"
+          >
+            <img
+            id="4"
+              class="thumbnail object-center w-full group-hover:opacity-20"
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="sneaker front"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Snealker Description -->
+      <div
+        class="h-full flex flex-col items-start justify-center lg:p-12 md:p-8 max-w-md md:mx-auto w-[90%] mx-auto"
+      >
+        <p
+          class="text-xs text-stone-600 mb-2 font-bold uppercase tracking-[1px]"
+        >
+          Sneaker Company
+        </p>
+        <h1 class="font-bold text-3xl">Fall Limited Edition Sneakers</h1>
+        <p class="text-sm text-black/60">
+          This low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they'll withstand everything
+          the weather can offer.
+        </p>
+        <div class="flex flex-row md:block items-center justify-between w-full mb-8">
+          <div class="mt-4 flex items-center gap-4">
+            <p class="text-2xl font-bold">$125.00</p>
+            <span
+              class="bg-black text-sm text-white font-bold px-2.5 py-2 rounded-md flex items-center justify-center leading-none"
+            >
+              50%
+            </span>
+          </div>
+          <p class="line-through mt-2 font-bold text-stone-800/60 pt-2">$250.00</p>
+        </div>
+        
+
+        <!-- Add to Card - minus/plus -->
+        <div class="w-full grid md:grid-cols-[40%_60%] grid-cols-1 items-center mb-12">
+          <div class="flex items-center flex-row justify-between w-full">
+            <button class="btn-minus p-4">
+              <img class="" src="./images/icon-minus.svg" alt="minus icon" />
+            </button>
+            
+            <p class="quantity font-bold">0</p>
+            <button class="btn-plus p-4">
+              <img src="./images/icon-plus.svg" alt="plus icon" />
+            </button>
+            
+          </div>
+          <button
+            class="btn-add md:ml-4 mt-2 md:mt-0 add-to-cart font-bold flex items-center  justify-center gap-4 bg-orange px-2 py-4 md:p-2 rounded-md"
+          >
+            <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                fill="#000"
+                fill-rule="nonzero"
+              /> <span>Add to cart</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
