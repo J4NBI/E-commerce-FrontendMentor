@@ -1,2 +1,1 @@
-# E-commerce-FrontendMentor
-Created with CodeSandbox
+https://j4nbi.github.io/E-commerce-FrontendMentor/
